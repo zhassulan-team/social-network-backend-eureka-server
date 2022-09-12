@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  social_network_auth_postgres:
+    image: postgres:14.1-alpine
+    container_name: social_network_auth_postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=auth_db
+    ports:
+      - '5421:5432'
+  social_network_content_postgres:
+    image: postgres:14.1-alpine
+    container_name: social_network_content_postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=content_db
+    ports:
+      - '5422:5432'
+  social_network_notification_postgres:
+    image: postgres:14.1-alpine
+    container_name: social_network_notification_postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=notification_db
+    ports:
+      - '5423:5432'
