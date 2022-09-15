@@ -1,4 +1,4 @@
-version: '4.12.0'
+version: '3.8'
 services:
   social_network_backend_auth_service_postgres_db:
     image: postgres:14.1-alpine
