@@ -68,3 +68,13 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
     ports:
       - '6379:6379'
+  social_network_backend_upload_service_mongo_db:
+    image: mongo:5.0
+    container_name: social_network_backend_upload_service_mongo_db
+    restart: always
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=mongoadmin
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=123
+      - ME_CONFIG_MONGODB_URL=mongodb://mongoadmin:123@mongo:27017/
+    ports:
+      - '27017:27017'
